@@ -9,15 +9,36 @@ namespace Accounting.DataLayer.Services
 {
     public class CustomerRepository : ICustomerRepository
     {
-        AccountingEntities db = new AccountingEntities();
+        private AccountingEntities db;
+        public CustomerRepository(AccountingEntities contex)
+        {
+            db = contex;
+        }
         public bool DeleteCustomer(Customers customer)
         {
-            throw new NotImplementedException();
+            try
+            {
+                db.Entry(customer).State = System.Data.Entity.EntityState.Deleted;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public bool DeleteCustomer(int customerId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var customer = GetCustomerbyId(customerId);
+                DeleteCustomer(customer);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public List<Customers> GetAllCustomers()
@@ -27,7 +48,7 @@ namespace Accounting.DataLayer.Services
 
         public Customers GetCustomerbyId(int customerId)
         {
-            throw new NotImplementedException();
+            return db.Customers.Find(customerId);
         }
 
         public bool InsertCustomer(Customers customer)
@@ -45,12 +66,20 @@ namespace Accounting.DataLayer.Services
 
         public void Svae()
         {
-            throw new NotImplementedException();
+            db.SaveChanges();
         }
 
         public bool UpdateCustomer(Customers customer)
         {
-            throw new NotImplementedException();
+            try
+            {
+                db.Entry(customer).State = System.Data.Entity.EntityState.Modified;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

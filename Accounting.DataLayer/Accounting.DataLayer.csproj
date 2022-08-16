@@ -65,6 +65,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountingModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Contex\UnitOfWork.cs" />
     <Compile Include="Customers.cs">
       <DependentUpon>AccountingModel.tt</DependentUpon>
     </Compile>

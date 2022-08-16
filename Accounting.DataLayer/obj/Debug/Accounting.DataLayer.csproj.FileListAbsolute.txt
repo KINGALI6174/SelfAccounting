@@ -1,0 +1,12 @@
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\bin\Debug\Accounting.DataLayer.dll.config
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\bin\Debug\Accounting.DataLayer.dll
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\bin\Debug\Accounting.DataLayer.pdb
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\bin\Debug\EntityFramework.xml
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.csproj.AssemblyReference.cache
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.csproj.CopyComplete
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.dll
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.pdb

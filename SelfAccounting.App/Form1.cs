@@ -16,5 +16,11 @@ namespace SelfAccounting.App
         {
             InitializeComponent();
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            FrmCustomer frmCustomer=new FrmCustomer();
+            frmCustomer.ShowDialog();
+        }
     }
 }
