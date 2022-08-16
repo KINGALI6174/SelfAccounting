@@ -29,13 +29,17 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnrefresh = new System.Windows.Forms.ToolStripButton();
-            this.btndelete = new System.Windows.Forms.ToolStripButton();
-            this.btnedit = new System.Windows.Forms.ToolStripButton();
-            this.btnnewcustomer = new System.Windows.Forms.ToolStripButton();
-            this.txtserch = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.txtserch = new System.Windows.Forms.ToolStripTextBox();
             this.dgvcustomer = new System.Windows.Forms.DataGridView();
+            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnnewcustomer = new System.Windows.Forms.ToolStripButton();
+            this.btnedit = new System.Windows.Forms.ToolStripButton();
+            this.btndelete = new System.Windows.Forms.ToolStripButton();
+            this.btnrefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcustomer)).BeginInit();
             this.SuspendLayout();
@@ -55,26 +59,76 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btnrefresh
+            // toolStripLabel1
             // 
-            this.btnrefresh.Image = global::SelfAccounting.App.Properties.Resources._1371476342_Refresh;
-            this.btnrefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnrefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnrefresh.Name = "btnrefresh";
-            this.btnrefresh.Size = new System.Drawing.Size(60, 59);
-            this.btnrefresh.Text = "بروزرسانی";
-            this.btnrefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(47, 59);
+            this.toolStripLabel1.Text = "جستجو :";
             // 
-            // btndelete
+            // txtserch
             // 
-            this.btndelete.Image = global::SelfAccounting.App.Properties.Resources._1371476007_Close_Box_Red;
-            this.btndelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btndelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(72, 59);
-            this.btndelete.Text = "حذف شخص";
-            this.btndelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.txtserch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtserch.Name = "txtserch";
+            this.txtserch.Size = new System.Drawing.Size(100, 62);
+            this.txtserch.TextChanged += new System.EventHandler(this.txtserch_TextChanged);
+            // 
+            // dgvcustomer
+            // 
+            this.dgvcustomer.AllowUserToAddRows = false;
+            this.dgvcustomer.AllowUserToDeleteRows = false;
+            this.dgvcustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvcustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvcustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CustomerID,
+            this.FullName,
+            this.Mobile,
+            this.Email});
+            this.dgvcustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvcustomer.Location = new System.Drawing.Point(0, 62);
+            this.dgvcustomer.Name = "dgvcustomer";
+            this.dgvcustomer.ReadOnly = true;
+            this.dgvcustomer.Size = new System.Drawing.Size(584, 299);
+            this.dgvcustomer.TabIndex = 1;
+            // 
+            // CustomerID
+            // 
+            this.CustomerID.DataPropertyName = "CustomerID";
+            this.CustomerID.HeaderText = "کد شخص";
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.ReadOnly = true;
+            this.CustomerID.Visible = false;
+            // 
+            // FullName
+            // 
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.HeaderText = "نام و نام خانوادگی";
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
+            // 
+            // Mobile
+            // 
+            this.Mobile.DataPropertyName = "Mobile";
+            this.Mobile.HeaderText = "تلفن همراه";
+            this.Mobile.Name = "Mobile";
+            this.Mobile.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "پست الکترونیکی";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // btnnewcustomer
+            // 
+            this.btnnewcustomer.Image = global::SelfAccounting.App.Properties.Resources._1371475930_filenew;
+            this.btnnewcustomer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnnewcustomer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnnewcustomer.Name = "btnnewcustomer";
+            this.btnnewcustomer.Size = new System.Drawing.Size(70, 59);
+            this.btnnewcustomer.Text = "شخص جدید";
+            this.btnnewcustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnnewcustomer.Click += new System.EventHandler(this.btnnewcustomer_Click);
             // 
             // btnedit
             // 
@@ -86,36 +140,27 @@
             this.btnedit.Text = "ویرایش شخص";
             this.btnedit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // btnnewcustomer
+            // btndelete
             // 
-            this.btnnewcustomer.Image = global::SelfAccounting.App.Properties.Resources._1371475930_filenew;
-            this.btnnewcustomer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnnewcustomer.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnnewcustomer.Name = "btnnewcustomer";
-            this.btnnewcustomer.Size = new System.Drawing.Size(70, 59);
-            this.btnnewcustomer.Text = "شخص جدید";
-            this.btnnewcustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btndelete.Image = global::SelfAccounting.App.Properties.Resources._1371476007_Close_Box_Red;
+            this.btndelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btndelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(72, 59);
+            this.btndelete.Text = "حذف شخص";
+            this.btndelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
-            // txtserch
+            // btnrefresh
             // 
-            this.txtserch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtserch.Name = "txtserch";
-            this.txtserch.Size = new System.Drawing.Size(100, 62);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(47, 59);
-            this.toolStripLabel1.Text = "جستجو :";
-            // 
-            // dgvcustomer
-            // 
-            this.dgvcustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvcustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvcustomer.Location = new System.Drawing.Point(0, 62);
-            this.dgvcustomer.Name = "dgvcustomer";
-            this.dgvcustomer.Size = new System.Drawing.Size(584, 299);
-            this.dgvcustomer.TabIndex = 1;
+            this.btnrefresh.Image = global::SelfAccounting.App.Properties.Resources._1371476342_Refresh;
+            this.btnrefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnrefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnrefresh.Name = "btnrefresh";
+            this.btnrefresh.Size = new System.Drawing.Size(60, 59);
+            this.btnrefresh.Text = "بروزرسانی";
+            this.btnrefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
             // 
             // FrmCustomer
             // 
@@ -149,5 +194,9 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox txtserch;
         private System.Windows.Forms.DataGridView dgvcustomer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mobile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }

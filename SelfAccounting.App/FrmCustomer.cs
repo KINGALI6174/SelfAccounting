@@ -26,13 +26,52 @@ namespace SelfAccounting.App
         {
             using (UnitOfWork db = new UnitOfWork())
             {
+                dgvcustomer.AutoGenerateColumns = false;
                 dgvcustomer.DataSource = db.CustomerRepository.GetAllCustomers();
             }
         }
 
         private void btnrefresh_Click(object sender, EventArgs e)
         {
+            txtserch.Text = "";
             BindGrid();
+        }
+
+        private void txtserch_TextChanged(object sender, EventArgs e)
+        {
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                db.CustomerRepository.GetCustomerByFilter(txtserch.Text);
+            }
+        }
+
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                string Name = dgvcustomer.CurrentRow.Cells[1].Value.ToString();
+                if (dgvcustomer.CurrentRow != null)
+                {
+                    int customerId = int.Parse(dgvcustomer.CurrentRow.Cells[0].Value.ToString());
+                    if (RtlMessageBox.Show($"آیا از حذف {Name} مطمئن هستید؟", "توجه", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        db.CustomerRepository.DeleteCustomer(customerId);
+                        db.save();
+                        BindGrid();
+                    }
+
+                }
+                else
+                {
+                    RtlMessageBox.Show("لطفا شخص مورد نظر را انتخاب کنید");
+                }
+            }
+        }
+
+        private void btnnewcustomer_Click(object sender, EventArgs e)
+        {
+            FrmAddOrEdit frmAddOrEdit = new FrmAddOrEdit();
+            frmAddOrEdit.ShowDialog();
         }
     }
 }
