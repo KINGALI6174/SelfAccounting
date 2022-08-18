@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace SelfAccounting.App
     public partial class FrmAddOrEdit : Form
     {
         UnitOfWork db = new UnitOfWork();
+        public int CustomerId = 0;
         public FrmAddOrEdit()
         {
             InitializeComponent();
@@ -54,7 +56,7 @@ namespace SelfAccounting.App
             }
             else
             {
-                errorProviderfullname.SetError(txtfullname,"");
+                errorProviderfullname.SetError(txtfullname, "");
             }
             if (String.IsNullOrEmpty(txtmobile.Text.Trim()))
             {
@@ -64,7 +66,7 @@ namespace SelfAccounting.App
             }
             else
             {
-                errorProvidermobile.SetError(txtmobile, txtmobile.Text);
+                errorProvidermobile.SetError(txtmobile, "");
             }
             if (String.IsNullOrEmpty(txtemail.Text.Trim()))
             {
@@ -74,12 +76,14 @@ namespace SelfAccounting.App
             }
             else
             {
-                errorProvideremail.SetError(txtemail, txtemail.Text);
+                errorProvideremail.SetError(txtemail, "");
             }
             return isValid;
         }
         private void btnsubmit_Click(object sender, EventArgs e)
         {
+
+
             //if (String.IsNullOrEmpty(txtfullname.Text.Trim()))
             //{
             //    errorProviderfullname.SetError(txtfullname, "فیلد نام و نام خانوادگی اجباری است");
@@ -111,17 +115,48 @@ namespace SelfAccounting.App
             {
                 return;
             }
+            string ImageNmae = Guid.NewGuid().ToString() + Path.GetExtension(pbcustomer.ImageLocation);
+            String path = Application.StartupPath + "/Images";
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            pbcustomer.Image.Save(path + ImageNmae);
             Customers customer = new Customers()
             {
                 FullName = txtfullname.Text,
                 Mobile = txtmobile.Text,
                 Email = txtemail.Text,
                 Address = txtaddress.Text,
-                Image = "NoPhoto.jpg0",
+                Image = ImageNmae,
             };
-            db.CustomerRepository.InsertCustomer(customer);
+            if (CustomerId == 0)
+            {
+                db.CustomerRepository.InsertCustomer(customer);
+            }
+            else
+            {
+                db.CustomerRepository.UpdateCustomer(customer);
+            }
             db.save();
             DialogResult = DialogResult.OK;
+
+
+        }
+
+        private void FrmAddOrEdit_Load(object sender, EventArgs e)
+        {
+            if (CustomerId != 0)
+            {
+                this.Text = "ویرایش شخص";
+                btnsubmit.Text = "ویرایش";
+                Customers customer=db.CustomerRepository.GetCustomerbyId(CustomerId);
+                txtfullname.Text = customer.FullName;
+                txtmobile.Text = customer.Mobile;
+                txtemail.Text = customer.Email;
+                txtaddress.Text=customer.Address;
+                pbcustomer.ImageLocation = Application.StartupPath + "/Images" + customer.Image;
+            }
         }
     }
 }

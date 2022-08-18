@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace SelfAccounting.App
 {
     public partial class FrmCustomer : Form
-    {
+    { 
         public FrmCustomer()
         {
             InitializeComponent();
@@ -75,6 +75,27 @@ namespace SelfAccounting.App
             {
                 BindGrid();
             }
+        }
+
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+            if (dgvcustomer.CurrentRow != null)
+            {
+                int customerid=int.Parse(dgvcustomer.CurrentRow.Cells[0].Value.ToString());
+                FrmAddOrEdit formAddOrEdit = new FrmAddOrEdit();
+                formAddOrEdit.CustomerId = customerid;
+                if (formAddOrEdit.ShowDialog() == DialogResult.OK)
+                {
+                    BindGrid();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("لطفا شخص مورد نظر را انتخاب کنید");
+            }
+            
+
         }
     }
 }
