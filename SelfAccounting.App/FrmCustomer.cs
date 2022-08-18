@@ -71,7 +71,10 @@ namespace SelfAccounting.App
         private void btnnewcustomer_Click(object sender, EventArgs e)
         {
             FrmAddOrEdit frmAddOrEdit = new FrmAddOrEdit();
-            frmAddOrEdit.ShowDialog();
+            if (frmAddOrEdit.ShowDialog() == DialogResult.OK)
+            {
+                BindGrid();
+            }
         }
     }
 }

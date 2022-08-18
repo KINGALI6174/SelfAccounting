@@ -21,3 +21,4 @@ C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\obj\Debug\SelfAccoun
 C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Accounting.Utility.dll
 C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Accounting.Utility.pdb
 C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\obj\Debug\SelfAccounting.App.FrmAddOrEdit.resources
+C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\System.ComponentModel.DataAnnotations.dll

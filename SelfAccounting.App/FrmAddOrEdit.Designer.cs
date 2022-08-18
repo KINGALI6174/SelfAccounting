@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtaddress = new System.Windows.Forms.TextBox();
             this.txtemail = new System.Windows.Forms.TextBox();
@@ -39,11 +40,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnselectimage = new System.Windows.Forms.Button();
-            this.btnsubmit = new System.Windows.Forms.Button();
             this.pbcustomer = new System.Windows.Forms.PictureBox();
+            this.btnsubmit = new System.Windows.Forms.Button();
+            this.errorProviderfullname = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvidermobile = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvideremail = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbcustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderfullname)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvidermobile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvideremail)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -58,7 +65,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(218, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(254, 248);
+            this.groupBox1.Size = new System.Drawing.Size(268, 248);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "اطلاعات شخص";
@@ -152,15 +159,6 @@
             this.btnselectimage.UseVisualStyleBackColor = true;
             this.btnselectimage.Click += new System.EventHandler(this.btnselectimage_Click);
             // 
-            // btnsubmit
-            // 
-            this.btnsubmit.Location = new System.Drawing.Point(232, 267);
-            this.btnsubmit.Name = "btnsubmit";
-            this.btnsubmit.Size = new System.Drawing.Size(234, 23);
-            this.btnsubmit.TabIndex = 2;
-            this.btnsubmit.Text = "ثبت";
-            this.btnsubmit.UseVisualStyleBackColor = true;
-            // 
             // pbcustomer
             // 
             this.pbcustomer.Image = global::SelfAccounting.App.Properties.Resources.NoPhotoImage;
@@ -171,11 +169,33 @@
             this.pbcustomer.TabIndex = 0;
             this.pbcustomer.TabStop = false;
             // 
+            // btnsubmit
+            // 
+            this.btnsubmit.Location = new System.Drawing.Point(232, 267);
+            this.btnsubmit.Name = "btnsubmit";
+            this.btnsubmit.Size = new System.Drawing.Size(234, 23);
+            this.btnsubmit.TabIndex = 2;
+            this.btnsubmit.Text = "ثبت";
+            this.btnsubmit.UseVisualStyleBackColor = true;
+            this.btnsubmit.Click += new System.EventHandler(this.btnsubmit_Click);
+            // 
+            // errorProviderfullname
+            // 
+            this.errorProviderfullname.ContainerControl = this;
+            // 
+            // errorProvidermobile
+            // 
+            this.errorProvidermobile.ContainerControl = this;
+            // 
+            // errorProvideremail
+            // 
+            this.errorProvideremail.ContainerControl = this;
+            // 
             // FrmAddOrEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 311);
+            this.ClientSize = new System.Drawing.Size(489, 311);
             this.Controls.Add(this.btnsubmit);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -189,6 +209,9 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbcustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderfullname)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvidermobile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvideremail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -208,5 +231,8 @@
         private System.Windows.Forms.Button btnselectimage;
         private System.Windows.Forms.PictureBox pbcustomer;
         private System.Windows.Forms.Button btnsubmit;
+        private System.Windows.Forms.ErrorProvider errorProviderfullname;
+        private System.Windows.Forms.ErrorProvider errorProvidermobile;
+        private System.Windows.Forms.ErrorProvider errorProvideremail;
     }
 }
