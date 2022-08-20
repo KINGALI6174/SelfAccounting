@@ -15,7 +15,7 @@ namespace SelfAccounting.App
 {
     public partial class FrmAddOrEdit : Form
     {
-        UnitOfWork db = new UnitOfWork();
+        //UnitOfWork db = new UnitOfWork();
         public int CustomerId = 0;
         public FrmAddOrEdit()
         {
@@ -130,32 +130,38 @@ namespace SelfAccounting.App
                 Address = txtaddress.Text,
                 Image = ImageNmae,
             };
-            if (CustomerId == 0)
+            using (UnitOfWork db = new UnitOfWork())
             {
-                db.CustomerRepository.InsertCustomer(customer);
+                if (CustomerId == 0)
+                {
+                    db.CustomerRepository.InsertCustomer(customer);
+                }
+                else
+                {
+                    customer.CustomerID = CustomerId;
+                    db.CustomerRepository.UpdateCustomer(customer);
+                }
+                db.save();
+                DialogResult = DialogResult.OK;
             }
-            else
-            {
-                db.CustomerRepository.UpdateCustomer(customer);
-            }
-            db.save();
-            DialogResult = DialogResult.OK;
-
 
         }
 
         private void FrmAddOrEdit_Load(object sender, EventArgs e)
         {
-            if (CustomerId != 0)
+            using (UnitOfWork db = new UnitOfWork())
             {
-                this.Text = "ویرایش شخص";
-                btnsubmit.Text = "ویرایش";
-                Customers customer=db.CustomerRepository.GetCustomerbyId(CustomerId);
-                txtfullname.Text = customer.FullName;
-                txtmobile.Text = customer.Mobile;
-                txtemail.Text = customer.Email;
-                txtaddress.Text=customer.Address;
-                pbcustomer.ImageLocation = Application.StartupPath + "/Images" + customer.Image;
+                if (CustomerId != 0)
+                {
+                    this.Text = "ویرایش شخص";
+                    btnsubmit.Text = "ویرایش";
+                    Customers customer = db.CustomerRepository.GetCustomerbyId(CustomerId);
+                    txtfullname.Text = customer.FullName;
+                    txtmobile.Text = customer.Mobile;
+                    txtemail.Text = customer.Email;
+                    txtaddress.Text = customer.Address;
+                    pbcustomer.ImageLocation = Application.StartupPath + "/Images" + customer.Image;
+                }
             }
         }
     }

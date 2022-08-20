@@ -77,9 +77,9 @@ namespace Accounting.DataLayer.Services
                 db.Entry(customer).State = System.Data.Entity.EntityState.Modified;
                 return true;
             }
-            catch
+           catch
             {
-                return false;
+               return false;
             }
         }
     }
