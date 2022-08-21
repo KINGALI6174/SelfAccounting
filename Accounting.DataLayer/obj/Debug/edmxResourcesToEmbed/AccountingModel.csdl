@@ -10,8 +10,64 @@
     <Property Name="Email" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Accounting" Relationship="SelfAccountingModel.FK_Accounting_Customers" FromRole="Customers" ToRole="Accounting" />
   </EntityType>
   <EntityContainer Name="AccountingEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Customers" EntityType="Self.Customers" />
+    <EntitySet Name="Accounting" EntityType="SelfAccountingModel.Accounting" />
+    <EntitySet Name="AccountingType" EntityType="SelfAccountingModel.AccountingType" />
+    <AssociationSet Name="FK_Accounting_Accounting1" Association="SelfAccountingModel.FK_Accounting_Accounting1">
+      <End Role="AccountingType" EntitySet="AccountingType" />
+      <End Role="Accounting" EntitySet="Accounting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Accounting_Customers" Association="SelfAccountingModel.FK_Accounting_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Accounting" EntitySet="Accounting" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Accounting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <Property Name="amount" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="AccountingType" Relationship="SelfAccountingModel.FK_Accounting_Accounting1" FromRole="Accounting" ToRole="AccountingType" />
+    <NavigationProperty Name="Customers" Relationship="SelfAccountingModel.FK_Accounting_Customers" FromRole="Accounting" ToRole="Customers" />
+  </EntityType>
+  <EntityType Name="AccountingType">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <Property Name="TypeTitle" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Accounting" Relationship="SelfAccountingModel.FK_Accounting_Accounting1" FromRole="AccountingType" ToRole="Accounting" />
+  </EntityType>
+  <Association Name="FK_Accounting_Accounting1">
+    <End Type="SelfAccountingModel.AccountingType" Role="AccountingType" Multiplicity="1" />
+    <End Type="SelfAccountingModel.Accounting" Role="Accounting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountingType">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="Accounting">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Accounting_Customers">
+    <End Type="SelfAccountingModel.Customers" Role="Customers" Multiplicity="1" />
+    <End Type="SelfAccountingModel.Accounting" Role="Accounting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Accounting">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

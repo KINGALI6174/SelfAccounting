@@ -10,6 +10,7 @@ namespace Accounting.DataLayer.Repository
     {
         List<Customers> GetAllCustomers();
         IEnumerable<Customers> GetCustomerByFilter(string parameter);
+        List<String> GetNameCustomer(string parameter = "");
         Customers GetCustomerbyId(int customerId);
         bool InsertCustomer(Customers customer);
         bool UpdateCustomer(Customers customer);

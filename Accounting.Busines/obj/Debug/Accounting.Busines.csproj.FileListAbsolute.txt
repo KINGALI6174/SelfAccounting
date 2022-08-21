@@ -1,0 +1,6 @@
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.Busines\bin\Debug\Accounting.Busines.dll
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.Busines\bin\Debug\Accounting.Busines.pdb
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.Busines\obj\Debug\Accounting.Busines.csproj.AssemblyReference.cache
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.Busines\obj\Debug\Accounting.Busines.csproj.CoreCompileInputs.cache
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.Busines\obj\Debug\Accounting.Busines.dll
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.Busines\obj\Debug\Accounting.Busines.pdb

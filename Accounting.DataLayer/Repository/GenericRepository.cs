@@ -20,6 +20,11 @@ namespace Accounting.DataLayer.Repository
         public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> where = null)
         {
             IQueryable<TEntity> query = _dbSet;
+            if(where != null)
+            {
+                query = query.Where(where);
+            }
+            return query.ToList();
         }
 
         public virtual void Insert(TEntity entity)
@@ -42,6 +47,11 @@ namespace Accounting.DataLayer.Repository
                 _dbSet.Attach(entity);
             }
             _dbSet.Remove(entity);
+        }
+        public virtual void Delete(object Id)
+        {
+            var Entity =GetById(Id);
+            Delete(Entity);
         }
     }
 }

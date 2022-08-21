@@ -16,11 +16,23 @@ namespace Accounting.DataLayer.Contex
         {
             get
             {
-                if( _customerRepository == null)
+                if (_customerRepository == null)
                 {
-                    _customerRepository=new CustomerRepository(db);
+                    _customerRepository = new CustomerRepository(db);
                 }
                 return _customerRepository;
+            }
+        }
+        private GenericRepository<Accounting> _accountingRepository;
+        public GenericRepository<Accounting> AccountingRepository
+        {
+            get
+            {
+                if (_accountingRepository == null)
+                {
+                    _accountingRepository = new GenericRepository<Accounting>(db);
+                }
+                return _accountingRepository;
             }
         }
 

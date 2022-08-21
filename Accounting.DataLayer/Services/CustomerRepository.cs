@@ -77,10 +77,19 @@ namespace Accounting.DataLayer.Services
                 db.Entry(customer).State = System.Data.Entity.EntityState.Modified;
                 return true;
             }
-           catch
+            catch
             {
-               return false;
+                return false;
             }
+        }
+
+        public List<string> GetNameCustomer(string parameter = "")
+        {
+            if (parameter == "")
+            {
+                return db.Customers.Select(c => c.FullName).ToList();
+            }
+            return db.Customers.Where(c => c.FullName.Contains(parameter)).Select(c => c.FullName).ToList();
         }
     }
 }

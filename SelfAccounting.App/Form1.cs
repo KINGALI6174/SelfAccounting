@@ -22,5 +22,11 @@ namespace SelfAccounting.App
             FrmCustomer frmCustomer=new FrmCustomer();
             frmCustomer.ShowDialog();
         }
+
+        private void btnnewtransaction_Click(object sender, EventArgs e)
+        {
+            FrmNewTransaction frmNewTransaction=new FrmNewTransaction();
+            frmNewTransaction.ShowDialog();
+        }
     }
 }
