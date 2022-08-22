@@ -10,3 +10,5 @@ C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\obj\Debug\Accounti
 C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.csproj.CopyComplete
 C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.dll
 C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.pdb
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\bin\Debug\Accounting.ViewModel.dll
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\bin\Debug\Accounting.ViewModel.pdb

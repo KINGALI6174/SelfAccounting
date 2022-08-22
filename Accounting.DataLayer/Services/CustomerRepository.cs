@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Accounting.DataLayer.Repository;
+using Accounting.ViewModel.Customer;
 
 namespace Accounting.DataLayer.Services
 {
@@ -83,13 +84,27 @@ namespace Accounting.DataLayer.Services
             }
         }
 
-        public List<string> GetNameCustomer(string parameter = "")
+        public List<ListCustomer> GetNameCustomer(string parameter = "")
         {
             if (parameter == "")
             {
-                return db.Customers.Select(c => c.FullName).ToList();
+                return db.Customers.Select(c => new ListCustomer()
+                {
+                    CustomerID = c.CustomerID,
+                    FullName = c.FullName,
+                }).ToList();
             }
-            return db.Customers.Where(c => c.FullName.Contains(parameter)).Select(c => c.FullName).ToList();
+            return db.Customers.Where(c => c.FullName.Contains(parameter)).Select(c => new ListCustomer()
+            {
+                CustomerID = c.CustomerID,
+                FullName = c.FullName,
+            }).ToList();
         }
+
+        // Because the name and surname are not unique This method cannot be used
+        //public int GetCustomerIdByName(string name)
+        //{
+        //    return db.Customers.First(c => c.FullName == name).CustomerID;
+        //}
     }
 }
