@@ -58,7 +58,6 @@ namespace SelfAccounting.App
 
                 accounting.amount = int.Parse(txtamount.Value.ToString());
                 accounting.CustomerID = mycustomerId;
-                accounting.CustomerID = mycustomerId;
                 accounting.TypeID = (rbrecive.Checked) ? 1 : 2;
                 accounting.DateTime = DateTime.Now;
                 accounting.Description = txtdescription.Text;

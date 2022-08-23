@@ -101,6 +101,11 @@ namespace Accounting.DataLayer.Services
             }).ToList();
         }
 
+        public string GetCustomerNameById(int customerId)
+        {
+            return db.Customers.Find(customerId).FullName;
+        }
+
         // Because the name and surname are not unique This method cannot be used
         //public int GetCustomerIdByName(string name)
         //{

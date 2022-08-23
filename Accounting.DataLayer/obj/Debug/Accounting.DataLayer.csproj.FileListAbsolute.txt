@@ -12,3 +12,5 @@ C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\obj\Debug\Accounti
 C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.pdb
 C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\bin\Debug\Accounting.ViewModel.dll
 C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\bin\Debug\Accounting.ViewModel.pdb
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.csproj.GenerateResource.cache
+C:\Users\Ali\source\repos\SelfAccounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.Properties.Resources.resources

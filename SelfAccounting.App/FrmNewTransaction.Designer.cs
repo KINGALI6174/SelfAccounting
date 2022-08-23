@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvcustomers = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtfilter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtname = new System.Windows.Forms.TextBox();
@@ -43,8 +45,6 @@
             this.txtdescription = new System.Windows.Forms.TextBox();
             this.btnsubmit = new System.Windows.Forms.Button();
             this.errorprovidertxtname = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtamount)).BeginInit();
@@ -77,6 +77,21 @@
             this.dgvcustomers.Size = new System.Drawing.Size(188, 286);
             this.dgvcustomers.TabIndex = 1;
             this.dgvcustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcustomers_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "FullName";
+            this.Column1.HeaderText = "نام شخص";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "CustomerID";
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
             // 
             // txtfilter
             // 
@@ -175,7 +190,6 @@
             this.txtdescription.Location = new System.Drawing.Point(257, 155);
             this.txtdescription.Multiline = true;
             this.txtdescription.Name = "txtdescription";
-            this.txtdescription.ReadOnly = true;
             this.txtdescription.Size = new System.Drawing.Size(248, 159);
             this.txtdescription.TabIndex = 9;
             // 
@@ -192,21 +206,6 @@
             // errorprovidertxtname
             // 
             this.errorprovidertxtname.ContainerControl = this;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "FullName";
-            this.Column1.HeaderText = "نام شخص";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "CustomerID";
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Visible = false;
             // 
             // FrmNewTransaction
             // 

@@ -11,6 +11,7 @@ namespace Accounting.DataLayer.Repository
     {
         List<Customers> GetAllCustomers();
         IEnumerable<Customers> GetCustomerByFilter(string parameter);
+        String GetCustomerNameById(int customerId);
         List<ListCustomer> GetNameCustomer(string parameter = "");
         //int GetCustomerIdByName(string name);
         Customers GetCustomerbyId(int customerId);

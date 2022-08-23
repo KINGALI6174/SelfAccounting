@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Accounting.DataLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,14 +20,28 @@ namespace SelfAccounting.App
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            FrmCustomer frmCustomer=new FrmCustomer();
+            FrmCustomer frmCustomer = new FrmCustomer();
             frmCustomer.ShowDialog();
         }
 
         private void btnnewtransaction_Click(object sender, EventArgs e)
         {
-            FrmNewTransaction frmNewTransaction=new FrmNewTransaction();
+            FrmNewTransaction frmNewTransaction = new FrmNewTransaction();
             frmNewTransaction.ShowDialog();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            FrmReport frmReport = new FrmReport();
+            frmReport.typeid = 2;
+            frmReport.ShowDialog();
+        }
+
+        private void btnreportrecive_Click(object sender, EventArgs e)
+        {
+            FrmReport frmReport = new FrmReport();
+            frmReport.typeid = 1;
+            frmReport.ShowDialog();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Accounting.DataLayer.Repository
+namespace Accounting.DataLayer.Services
 {
     public class GenericRepository<TEntity> where TEntity : class
     {
@@ -15,6 +15,7 @@ namespace Accounting.DataLayer.Repository
         public GenericRepository(AccountingEntities db)
         {
             _db = db;
+            _dbSet=_db.Set<TEntity>();
         }
 
         public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> where = null)

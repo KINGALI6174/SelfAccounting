@@ -34,6 +34,8 @@
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.btnnewtransaction = new System.Windows.Forms.ToolStripButton();
+            this.btnreportpay = new System.Windows.Forms.ToolStripButton();
+            this.btnreportrecive = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +63,9 @@
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
-            this.btnnewtransaction});
+            this.btnnewtransaction,
+            this.btnreportpay,
+            this.btnreportrecive});
             this.toolStrip2.Location = new System.Drawing.Point(0, 25);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(800, 62);
@@ -91,8 +95,31 @@
             this.btnnewtransaction.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnnewtransaction.Click += new System.EventHandler(this.btnnewtransaction_Click);
             // 
+            // btnreportpay
+            // 
+            this.btnreportpay.Image = global::SelfAccounting.App.Properties.Resources._1371475973_document_edit;
+            this.btnreportpay.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnreportpay.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnreportpay.Name = "btnreportpay";
+            this.btnreportpay.Size = new System.Drawing.Size(97, 59);
+            this.btnreportpay.Text = "گزارش پرداختی ها";
+            this.btnreportpay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnreportpay.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // btnreportrecive
+            // 
+            this.btnreportrecive.Image = global::SelfAccounting.App.Properties.Resources._1371476499_todo_list;
+            this.btnreportrecive.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnreportrecive.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnreportrecive.Name = "btnreportrecive";
+            this.btnreportrecive.Size = new System.Drawing.Size(98, 59);
+            this.btnreportrecive.Text = "گزارش دریافتی ها";
+            this.btnreportrecive.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnreportrecive.Click += new System.EventHandler(this.btnreportrecive_Click);
+            // 
             // Form1
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.Application;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -120,6 +147,8 @@
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton btnnewtransaction;
+        private System.Windows.Forms.ToolStripButton btnreportpay;
+        private System.Windows.Forms.ToolStripButton btnreportrecive;
     }
 }
 
