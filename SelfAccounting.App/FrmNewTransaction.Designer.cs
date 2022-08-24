@@ -227,7 +227,7 @@
             this.Name = "FrmNewTransaction";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FrmNewTransaction";
+            this.Text = "تراکنش جدید";
             this.Load += new System.EventHandler(this.FrmNewTransaction_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

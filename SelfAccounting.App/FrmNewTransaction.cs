@@ -14,7 +14,8 @@ namespace SelfAccounting.App
     public partial class FrmNewTransaction : Form
     {
         public int mycustomerId;
-        UnitOfWork db = new UnitOfWork();
+        public int accountId = 0;
+        UnitOfWork db;
         public FrmNewTransaction()
 
         {
@@ -24,8 +25,27 @@ namespace SelfAccounting.App
 
         private void FrmNewTransaction_Load(object sender, EventArgs e)
         {
-             dgvcustomers.AutoGenerateColumns = false;
+            db = new UnitOfWork();
+            dgvcustomers.AutoGenerateColumns = false;
             dgvcustomers.DataSource = db.CustomerRepository.GetNameCustomer();
+            if (accountId != 0)
+            {
+                var account = db.AccountingRepository.GetById(accountId);
+                txtamount.Text = account.amount.ToString();
+                txtdescription.Text = account.Description;
+                txtname.Text = db.CustomerRepository.GetCustomerNameById(account.CustomerID);
+                if (account.TypeID == 1)
+                {
+                    rbrecive.Checked = true;
+                }
+                else
+                {
+                    rbpay.Checked = true;
+                }
+                this.Text = "ویرایش";
+                btnsubmit.Text = "ویرایش";
+                db.Dispose();
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -54,17 +74,26 @@ namespace SelfAccounting.App
             }
             if (rbpay.Checked || rbrecive.Checked)
             {
+                db = new UnitOfWork();
                 Accounting.DataLayer.Accounting accounting = new Accounting.DataLayer.Accounting();
-
+                mycustomerId = int.Parse(dgvcustomers.CurrentRow.Cells[1].Value.ToString());
                 accounting.amount = int.Parse(txtamount.Value.ToString());
                 accounting.CustomerID = mycustomerId;
                 accounting.TypeID = (rbrecive.Checked) ? 1 : 2;
                 accounting.DateTime = DateTime.Now;
                 accounting.Description = txtdescription.Text;
 
-
-                db.AccountingRepository.Insert(accounting);
+                if (accountId == 0)
+                {
+                    db.AccountingRepository.Insert(accounting);
+                }
+                else
+                {
+                    accounting.ID = accountId;
+                    db.AccountingRepository.Update(accounting);
+                }
                 db.save();
+                db.Dispose();
                 DialogResult = DialogResult.OK;
             }
             else
