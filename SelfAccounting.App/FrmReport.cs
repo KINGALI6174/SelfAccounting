@@ -117,5 +117,26 @@ namespace SelfAccounting.App
                 }
             }
         }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("customer");
+            dt.Columns.Add("amount");
+            dt.Columns.Add("date");
+            dt.Columns.Add("description");
+            foreach (DataGridViewRow item in dgvreport.Rows)
+            {
+                dt.Rows.Add(
+                    item.Cells[0].Value.ToString(),
+                    item.Cells[1].Value.ToString(),
+                    item.Cells[2].Value.ToString(),
+                    item.Cells[3].Value.ToString()
+                    );
+            }
+            stiprint.Load(Application.StartupPath + "/Report.mrt");
+            stiprint.RegData("DT", dt);
+            stiprint.Show();
+        }
     }
 }

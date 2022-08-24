@@ -47,6 +47,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.تاریخ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stiprint = new Stimulsoft.Report.StiReport();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvreport)).BeginInit();
@@ -106,6 +107,7 @@
             this.toolStripButton4.Size = new System.Drawing.Size(44, 59);
             this.toolStripButton4.Text = "چاپ";
             this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // groupBox1
             // 
@@ -241,6 +243,27 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // stiprint
+            // 
+            this.stiprint.CookieContainer = null;
+            this.stiprint.EngineVersion = Stimulsoft.Report.Engine.StiEngineVersion.EngineV2;
+            this.stiprint.ReferencedAssemblies = new string[] {
+        "System.Dll",
+        "System.Drawing.Dll",
+        "System.Windows.Forms.Dll",
+        "System.Data.Dll",
+        "System.Xml.Dll",
+        "Stimulsoft.Controls.Dll",
+        "Stimulsoft.Base.Dll",
+        "Stimulsoft.Report.Dll"};
+            this.stiprint.ReportAlias = "Report";
+            this.stiprint.ReportGuid = "bec77624d5ce449fa9c7ebe493b62f0d";
+            this.stiprint.ReportName = "Report";
+            this.stiprint.ReportSource = null;
+            this.stiprint.ReportUnit = Stimulsoft.Report.StiReportUnitType.Inches;
+            this.stiprint.ScriptLanguage = Stimulsoft.Report.StiReportLanguageType.CSharp;
+            this.stiprint.UseProgressInThread = false;
+            // 
             // FrmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,5 +310,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn تاریخ;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private Stimulsoft.Report.StiReport stiprint;
     }
 }

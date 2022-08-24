@@ -29,7 +29,15 @@
     <Property Name="Address" Type="nvarchar(max)" />
     <Property Name="Image" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <Association Name="FK_Accounting_Accounting1">
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="LoginID" />
+    </Key>
+    <Property Name="LoginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Accounting_AccountingType">
     <End Role="AccountingType" Type="Self.AccountingType" Multiplicity="1" />
     <End Role="Accounting" Type="Self.Accounting" Multiplicity="*" />
     <ReferentialConstraint>
@@ -57,7 +65,8 @@
     <EntitySet Name="Accounting" EntityType="Self.Accounting" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AccountingType" EntityType="Self.AccountingType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Accounting_Accounting1" Association="Self.FK_Accounting_Accounting1">
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Accounting_AccountingType" Association="Self.FK_Accounting_AccountingType">
       <End Role="AccountingType" EntitySet="AccountingType" />
       <End Role="Accounting" EntitySet="Accounting" />
     </AssociationSet>

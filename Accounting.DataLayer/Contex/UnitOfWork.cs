@@ -36,6 +36,19 @@ namespace Accounting.DataLayer.Contex
             }
         }
 
+        private GenericRepository<Login> _LoginRepository;
+        public GenericRepository<Login> loginRepository
+        {
+            get
+            {
+                if(_LoginRepository == null)
+                {
+                    _LoginRepository = new GenericRepository<Login>(db);
+                }
+                return _LoginRepository;
+            }
+        }
+
         public void save()
         {
             db.SaveChanges();

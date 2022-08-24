@@ -1,4 +1,5 @@
 ﻿using Accounting.DataLayer;
+using Accounting.Utility.Convertor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,6 +43,34 @@ namespace SelfAccounting.App
             FrmReport frmReport = new FrmReport();
             frmReport.typeid = 1;
             frmReport.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmLogin frmLogin = new FrmLogin();
+            if (frmLogin.ShowDialog() == DialogResult.OK)
+            {
+                this.Show();
+                lbldate.Text = DateConvertor.ToShamsi(DateTime.Now);
+                lbltime.Text = DateTime.Now.ToString("HH:mm:ss");
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbltime.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void btneditlogin_Click(object sender, EventArgs e)
+        {
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.IsEdit = true;
+            frmLogin.ShowDialog();
         }
     }
 }

@@ -26,3 +26,12 @@ C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\obj\Debug\SelfAccoun
 C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Accounting.ViewModel.dll
 C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Accounting.ViewModel.pdb
 C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\obj\Debug\SelfAccounting.App.FrmReport.resources
+C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\obj\Debug\SelfAccounting.App.FrmLogin.resources
+C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Stimulsoft.Base.dll
+C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Stimulsoft.Report.dll
+C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Stimulsoft.Base.xml
+C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Stimulsoft.Report.xml
+C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Stimulsoft.Controls.Win.dll
+C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Stimulsoft.Report.Win.dll
+C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Stimulsoft.Controls.dll
+C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Stimulsoft.Controls.xml
