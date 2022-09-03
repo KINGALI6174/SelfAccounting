@@ -35,3 +35,4 @@ C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Stimulsoft
 C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Stimulsoft.Report.Win.dll
 C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Stimulsoft.Controls.dll
 C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Stimulsoft.Controls.xml
+C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\obj\Debug\SelfAccounting.App.frmadduser.resources

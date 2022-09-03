@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace SelfAccounting.App
 {
     public partial class FrmCustomer : Form
-    { 
+    {
         public FrmCustomer()
         {
             InitializeComponent();
@@ -41,7 +41,7 @@ namespace SelfAccounting.App
         {
             using (UnitOfWork db = new UnitOfWork())
             {
-                db.CustomerRepository.GetCustomerByFilter(txtserch.Text);
+                dgvcustomer.DataSource = db.CustomerRepository.GetCustomerByFilter(txtserch.Text);
             }
         }
 
@@ -53,7 +53,7 @@ namespace SelfAccounting.App
                 if (dgvcustomer.CurrentRow != null)
                 {
                     int customerId = int.Parse(dgvcustomer.CurrentRow.Cells[0].Value.ToString());
-                    if (RtlMessageBox.Show($"آیا از حذف {Name} مطمئن هستید؟", "توجه", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (RtlMessageBox.Show($"آیا از حذف {Name} مطمئن هستید؟", "توجه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         db.CustomerRepository.DeleteCustomer(customerId);
                         db.save();
@@ -81,7 +81,7 @@ namespace SelfAccounting.App
         {
             if (dgvcustomer.CurrentRow != null)
             {
-                int customerid=int.Parse(dgvcustomer.CurrentRow.Cells[0].Value.ToString());
+                int customerid = int.Parse(dgvcustomer.CurrentRow.Cells[0].Value.ToString());
                 FrmAddOrEdit formAddOrEdit = new FrmAddOrEdit();
                 formAddOrEdit.CustomerId = customerid;
                 if (formAddOrEdit.ShowDialog() == DialogResult.OK)
@@ -94,7 +94,7 @@ namespace SelfAccounting.App
             {
                 MessageBox.Show("لطفا شخص مورد نظر را انتخاب کنید");
             }
-            
+
 
         }
     }

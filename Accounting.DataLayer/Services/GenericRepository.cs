@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
@@ -15,13 +16,13 @@ namespace Accounting.DataLayer.Services
         public GenericRepository(AccountingEntities db)
         {
             _db = db;
-            _dbSet=_db.Set<TEntity>();
+            _dbSet = _db.Set<TEntity>();
         }
 
         public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> where = null)
         {
             IQueryable<TEntity> query = _dbSet;
-            if(where != null)
+            if (where != null)
             {
                 query = query.Where(where);
             }
@@ -51,8 +52,14 @@ namespace Accounting.DataLayer.Services
         }
         public virtual void Delete(object Id)
         {
-            var Entity =GetById(Id);
+            var Entity = GetById(Id);
             Delete(Entity);
         }
+
+        public virtual Login getuserbyname(string parameter)
+        {
+            return _db.Login.Find(parameter);
+        }
+
     }
 }

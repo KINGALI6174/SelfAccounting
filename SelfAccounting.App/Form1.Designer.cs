@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btneditlogin = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnadduser = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.btnnewtransaction = new System.Windows.Forms.ToolStripButton();
@@ -42,7 +44,6 @@
             this.lbldate = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbltime = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btneditlogin = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,13 +64,28 @@
             // 
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btneditlogin});
+            this.btneditlogin,
+            this.btnadduser});
             this.toolStripDropDownButton1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(60, 22);
             this.toolStripDropDownButton1.Text = "تنظیمات";
+            // 
+            // btneditlogin
+            // 
+            this.btneditlogin.Name = "btneditlogin";
+            this.btneditlogin.Size = new System.Drawing.Size(180, 22);
+            this.btneditlogin.Text = "تنظیمات ورود";
+            this.btneditlogin.Click += new System.EventHandler(this.btneditlogin_Click);
+            // 
+            // btnadduser
+            // 
+            this.btnadduser.Name = "btnadduser";
+            this.btnadduser.Size = new System.Drawing.Size(180, 22);
+            this.btnadduser.Text = "کاربر جدید";
+            this.btnadduser.Click += new System.EventHandler(this.btnadduser_Click);
             // 
             // toolStrip2
             // 
@@ -168,13 +184,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btneditlogin
-            // 
-            this.btneditlogin.Name = "btneditlogin";
-            this.btneditlogin.Size = new System.Drawing.Size(180, 22);
-            this.btneditlogin.Text = "تنظیمات ورود";
-            this.btneditlogin.Click += new System.EventHandler(this.btneditlogin_Click);
-            // 
             // Form1
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Application;
@@ -219,6 +228,7 @@
         private System.Windows.Forms.ToolStripStatusLabel lbltime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem btneditlogin;
+        private System.Windows.Forms.ToolStripMenuItem btnadduser;
     }
 }
 

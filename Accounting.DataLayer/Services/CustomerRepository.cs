@@ -54,7 +54,7 @@ namespace Accounting.DataLayer.Services
 
         public IEnumerable<Customers> GetCustomerByFilter(string parameter)
         {
-            return db.Customers.Where(c => c.FullName.Contains(parameter) || c.Email.Contains(parameter) || c.Mobile.Contains(parameter));
+            return db.Customers.Where(c => c.FullName.Contains(parameter) || c.Email.Contains(parameter) || c.Mobile.Contains(parameter)).ToList();
         }
 
         public bool InsertCustomer(Customers customer)
@@ -105,6 +105,19 @@ namespace Accounting.DataLayer.Services
         {
             return db.Customers.Find(customerId).FullName;
         }
+
+        //public bool AddUser(Login login)
+        //{
+        //    try
+        //    {
+        //        db.Login.Add(login);
+        //        return true;
+        //    }
+        //    catch
+        //    {
+        //        return false;
+        //    }
+        //}
 
         // Because the name and surname are not unique This method cannot be used
         //public int GetCustomerIdByName(string name)

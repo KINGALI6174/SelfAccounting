@@ -72,5 +72,11 @@ namespace SelfAccounting.App
             frmLogin.IsEdit = true;
             frmLogin.ShowDialog();
         }
+
+        private void btnadduser_Click(object sender, EventArgs e)
+        {
+            frmadduser frmadduser = new frmadduser();
+            frmadduser.ShowDialog();
+        }
     }
 }
