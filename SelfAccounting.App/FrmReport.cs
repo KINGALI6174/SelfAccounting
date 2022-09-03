@@ -128,10 +128,10 @@ namespace SelfAccounting.App
             foreach (DataGridViewRow item in dgvreport.Rows)
             {
                 dt.Rows.Add(
-                    item.Cells[0].Value.ToString(),
                     item.Cells[1].Value.ToString(),
                     item.Cells[2].Value.ToString(),
-                    item.Cells[3].Value.ToString()
+                    item.Cells[3].Value.ToString(),
+                    item.Cells[4].Value.ToString()
                     );
             }
             stiprint.Load(Application.StartupPath + "/Report.mrt");

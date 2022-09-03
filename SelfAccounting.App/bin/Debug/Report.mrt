@@ -27,12 +27,13 @@
   <MetaTags isList="true" count="0" />
   <Pages isList="true" count="1">
     <Page1 Ref="3" type="Page" isKey="true">
-      <Border>None;Black;2;Solid;False;4;Black</Border>
-      <Brush>Transparent</Brush>
+      <Border>AdvBlack;3;Solid;Black;3;Solid;Black;3;Solid;Black;3;Solid;False;3;Black</Border>
+      <Brush>White</Brush>
+      <Columns>4</Columns>
       <Components isList="true" count="3">
         <HeaderBand1 Ref="4" type="HeaderBand" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,0.2,7.72,1</ClientRectangle>
+          <ClientRectangle>0,0.2,1.93,1</ClientRectangle>
           <Components isList="true" count="1">
             <Text1 Ref="5" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -56,7 +57,7 @@
         </HeaderBand1>
         <HeaderDT Ref="6" type="HeaderBand" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,1.6,7.72,0.3</ClientRectangle>
+          <ClientRectangle>0,1.6,1.93,0.3</ClientRectangle>
           <Components isList="true" count="4">
             <HeaderStimulsoft_Report_Wpf_NodeTreeViewItem_Header__Items_Count_0 Ref="7" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -131,7 +132,7 @@
         <DataDT Ref="11" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <BusinessObjectGuid isNull="true" />
-          <ClientRectangle>0,2.3,7.72,0.3</ClientRectangle>
+          <ClientRectangle>0,2.3,1.93,0.3</ClientRectangle>
           <Components isList="true" count="4">
             <DataStimulsoft_Report_Wpf_NodeTreeViewItem_Header__Items_Count_0 Ref="12" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -233,10 +234,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>8/24/2022 3:41:25 PM</ReportChanged>
+  <ReportChanged>9/3/2022 4:30:12 PM</ReportChanged>
   <ReportCreated>8/24/2022 3:26:28 PM</ReportCreated>
-  <ReportFile />
-  <ReportGuid>175b4ac1fb6e4d8eb3807591e8fb2928</ReportGuid>
+  <ReportFile>C:\Users\Ali\source\repos\SelfAccounting\SelfAccounting.App\bin\Debug\Report.mrt</ReportFile>
+  <ReportGuid>3c160383e7074165bc156926404db4f8</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Inches</ReportUnit>
   <ReportVersion>2014.3.0</ReportVersion>
@@ -259,7 +260,7 @@ namespace Reports
         }
 
         #region StiReport Designer generated code - do not modify
-        #endregion StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
     }
 }
 </Script>
